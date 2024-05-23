@@ -1,0 +1,21 @@
+version: 1.0.1
+cache: true
+endpoints:
+  custom:
+    - name: "Ollama"
+      iconURL: https://ollama.ai/public/icon.png
+      apiKey: "noUse"
+      baseURL: "http://litellm:8000"
+      models: 
+        default: ["mistral"]
+        fetch: true
+      titleConvo: true
+      titleModel: "mistral" 
+      summarize: true
+      summaryModel: "mistral" 
+      forcePrompt: false 
+      modelDisplayLabel: "Ollama"
+      # addParams:
+      #   safe_prompt: true
+      # NOTE: For Mistral, it is necessary to drop the following parameters or you will encounter a 422 Error:
+      dropParams: ["stop", "user", "frequency_penalty", "presence_penalty"]
